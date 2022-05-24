@@ -19,7 +19,7 @@ screen = pygame.display.set_mode((screen_width,
 
 # caption and icon
 pygame.display.set_caption("Welcome to Space\
-Invaders Game by:- styles")
+Invaders Game ")
 
 
 # Score1
