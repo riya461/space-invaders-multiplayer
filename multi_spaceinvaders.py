@@ -4,6 +4,8 @@ import pygame
 import random
 import math
 from pygame import mixer
+import os
+
 
 
 # initializing pygame
@@ -97,6 +99,8 @@ invader_Y1 = []
 invader_Xchange1 = []
 invader_Ychange1 = []
 no_of_invaders = 5
+
+
 # Invader2
 invaderImage2 = []
 invader_X2 = []
@@ -107,21 +111,22 @@ invader_Ychange2 = []
 for num in range(no_of_invaders):
 	invaderImage1.append(pygame.image.load('data/alien.png'))
 	invaderImage2.append(pygame.image.load('data/alien.png'))
-	invader_X1.append(random.randint(75, 350))
+	invader_X1.append(random.randint(375, 575))
 	invader_Y1.append(random.randint(30, 180))
 	
-	invader_X2.append(random.randint(900, 1175))
+	invader_X2.append(random.randint(975, 1175))
 	invader_Y2.append(random.randint(30, 180))
-	invader_Xchange2.append(1.0)
+	invader_Xchange2.append(1.15)
 	invader_Ychange2.append(40)
-	invader_Xchange1.append(1.0)
+	invader_Xchange1.append(1.15)
 	invader_Ychange1.append(40)
 	
-
 
 # Bullet
 # rest - bullet is not moving
 # fire - bullet is moving
+
+
 bulletImage1 = pygame.image.load('data/bullet.png')
 bullet_X1 = 0
 bullet_Y1 = 700
@@ -176,6 +181,11 @@ while running:
 	for event in pygame.event.get():
 		if event.type == pygame.QUIT:
 			running = False
+
+		if event.type == pygame.KEYDOWN:
+			if event.key == pygame.K_8:
+				pygame.display.quit()
+				os.system("python multi_spaceinvaders.py")
 
 		# Controlling the player movement
 		# from the arrow keys
@@ -260,7 +270,7 @@ while running:
 		if invader_X1[i] >= 735 or invader_X1[i] <= 0:
 			invader_Xchange1[i] *= -1
 			invader_Y1[i] += invader_Ychange1[i]
-		# Collision
+		# Collisionaaaawjjjiiiiiiiijiijiawi
 		collision = isCollision(bullet_X1, invader_X1[i],
 								bullet_Y1, invader_Y1[i])
 		if collision:
@@ -324,6 +334,9 @@ while running:
 	show_score(scoreX, scoreY,score_val)
 	show_score(scoreX2,scoreY2,score_val2)
 	pygame.display.update()
+
+
+
 
 
 
