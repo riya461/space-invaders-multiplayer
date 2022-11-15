@@ -9,11 +9,10 @@ from pygame import mixer
 pygame.init()
 
 # creating screen
-screen_width = 2000
-screen_height = 2000
+screen_width = 1700
+screen_height = 900
 
-screen = pygame.display.set_mode((screen_width,
-								screen_height))
+screen = pygame.display.set_mode((screen_width,screen_height))
 
 
 # caption and icon
@@ -179,7 +178,8 @@ while running:
 		# from the arrow keys
 		if event.type == pygame.KEYDOWN:
 			if event.key == pygame.K_8:
-				os.system('/home/user/Desktop/project/space-invaders-multiplayer/multi_spaceinvaders.py') 
+				pygame.display.quit()
+				os.system('python3 multi_spaceinvaders.py') 
 			if event.key == pygame.K_a:
 				player_Xchange1 = -1.2
 			if event.key == pygame.K_d:
