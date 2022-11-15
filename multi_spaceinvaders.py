@@ -171,8 +171,9 @@ while running:
 	# RGB
 	screen.fill((0, 0, 0))
 	for event in pygame.event.get():
-		if event.type == pygame.QUIT:
-			running = False
+		if event.type == pygame.KEYDOWN:
+			if event.key == pygame.K_q:
+				running = False
 
 		# Controlling the player movement
 		# from the arrow keys
