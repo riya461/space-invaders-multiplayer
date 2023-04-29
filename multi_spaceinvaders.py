@@ -255,7 +255,7 @@ while running:
 					invader_Y1[j] = 2000
 					explosion_sound = mixer.Sound('data/explosion.wav')
 					explosion_sound.play()
-				game_over(no_of_invaders)
+				game_over()
 				break
 
 		if invader_X1[i] >= 735 or invader_X1[i] <= 0:
@@ -284,7 +284,7 @@ while running:
 					invader_Y2[j] = 2000
 					explosion_sound = mixer.Sound('data/explosion.wav')
 					explosion_sound.play()
-				game_over(no_of_invaders)
+				game_over()
 				break
 
 		if invader_X2[i] >= 1600 or invader_X2[i] <= 850:
