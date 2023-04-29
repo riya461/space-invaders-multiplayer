@@ -15,3 +15,10 @@ This is a small twist to the usual game of space invaders. The game is visualise
 ### general
 - 8 to restart 
 - numlock - to quit
+
+
+## Contributing guidelines 
+
+Check the issues for contributions, if you can make any new imporovements create new issue. Your PR will be approved after review. 
+Thankyou!
+
