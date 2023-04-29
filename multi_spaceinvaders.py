@@ -13,6 +13,7 @@ screen_width = 1700
 screen_height = 900
 
 screen = pygame.display.set_mode((screen_width,screen_height))
+no_of_invaders = 5
 
 
 # caption and icon
@@ -94,7 +95,6 @@ invader_X1 = []
 invader_Y1 = []
 invader_Xchange1 = []
 invader_Ychange1 = []
-no_of_invaders = 5
 # Invader2
 invaderImage2 = []
 invader_X2 = []
@@ -172,7 +172,7 @@ while running:
 	screen.fill((0, 0, 0))
 	for event in pygame.event.get():
 		if event.type == pygame.KEYDOWN:
-			if event.key == pygame.K_q:
+			if event.key == pygame.K_NUMLOCK:
 				running = False
 
 		# Controlling the player movement
@@ -180,7 +180,7 @@ while running:
 		if event.type == pygame.KEYDOWN:
 			if event.key == pygame.K_8:
 				pygame.display.quit()
-				os.system('python3 multi_spaceinvaders.py') 
+				os.system('python multi_spaceinvaders.py') 
 			if event.key == pygame.K_a:
 				player_Xchange1 = -1.2
 			if event.key == pygame.K_d:
@@ -255,7 +255,7 @@ while running:
 					invader_Y1[j] = 2000
 					explosion_sound = mixer.Sound('data/explosion.wav')
 					explosion_sound.play()
-				game_over()
+				game_over(no_of_invaders)
 				break
 
 		if invader_X1[i] >= 735 or invader_X1[i] <= 0:
@@ -284,7 +284,7 @@ while running:
 					invader_Y2[j] = 2000
 					explosion_sound = mixer.Sound('data/explosion.wav')
 					explosion_sound.play()
-				game_over()
+				game_over(no_of_invaders)
 				break
 
 		if invader_X2[i] >= 1600 or invader_X2[i] <= 850:
